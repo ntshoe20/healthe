@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// declare var $ :any;
 
 @Component({
   selector: 'app-admin',
@@ -10,6 +11,9 @@ export class AdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // $(function () {
+    //   $('[data-toggle="popover"]').popover()
+    // })
   }
 
 }

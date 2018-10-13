@@ -3,33 +3,43 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "health-e": {
+    "YolesaWebApp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": false,
-          "inlineStyle": false
-        }
-      },
-      "targets": {
+      "schematics": {},
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/health-e",
+            "outputPath": "dist/YolesaWebApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico"          
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/assets/scss/styles.scss"
+              "src/styles/app.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/chart.js/dist/Chart.min.js",
+              "node_modules/shards-ui/dist/js/shards.min.js",
+              "node_modules/sharrre/dist/jquery.sharrre.min.js",
+              "src/assets/js/extras.1.0.0.min.js",
+              "src/assets/js/shards-dashboards.1.0.0.min.js",
+              "src/assets/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/js/scrolling-nav.js",
+              "src/assets/vendor/countdowntime/moment.min.js",
+              "src/assets/vendor/countdowntime/moment-timezone.min.js",
+              "src/assets/vendor/countdowntime/moment-timezone-with-data.min.js",
+              "src/assets/vendor/countdowntime/countdowntime.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -54,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "health-e:build"
+            "browserTarget": "YolesaWebApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "health-e:build:production"
+              "browserTarget": "YolesaWebApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "health-e:build"
+            "browserTarget": "YolesaWebApp:build"
           }
         },
         "test": {
@@ -76,7 +86,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/assets/scss/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -99,19 +109,19 @@
         }
       }
     },
-    "health-e-e2e": {
+    "YolesaWebApp-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "targets": {
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "health-e:serve"
+            "devServerTarget": "YolesaWebApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "health-e:serve:production"
+              "devServerTarget": "YolesaWebApp:serve:production"
             }
           }
         },
@@ -127,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "health-e"
+  "defaultProject": "YolesaWebApp"
 }

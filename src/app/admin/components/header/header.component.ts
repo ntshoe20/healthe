@@ -1,4 +1,6 @@
+import { AuthService } from './../../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  profile: any;
+
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
+    if (this.auth.userProfile) {
+      this.profile = this.auth.userProfile;
+      console.log(JSON.stringify(this.profile));
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile; 
+      });
+    }
+  }
+
+  public logout(): void {
+    this.auth.logout();
   }
 
 }
