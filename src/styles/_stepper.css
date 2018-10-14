@@ -93,19 +93,19 @@
           background: #e6e6e6;
           border-radius: 3.5px; }
         .steps ul li.first a, .steps ul li.checked a {
-          background: #f3d4b7;
+          background: #007bff;
           transition: all 0.5s ease; }
       .steps ul:before {
-        content: "Billing Details";
+        content: "Step 1";
         font-size: 22px;
         font-family: "Poppins-SemiBold";
         color: #333;
         top: -38px;
         position: absolute; }
       .steps ul.step-2:before {
-        content: "Additional Information"; }
+        content: "Step 2"; }
       .steps ul.step-3:before {
-        content: "Your Order"; }
+        content: "Welcome"; }
       .steps ul.step-4:before {
         content: "Billing Method"; }
   
@@ -141,7 +141,7 @@
     width: 100%;
     padding: 0 18px; }
     .form-control:focus {
-      border-color: #f3d4b7; }
+      border-color: #007bff; }
     .form-control::-webkit-input-placeholder {
       color: #999;
       font-size: 13px; }
@@ -177,7 +177,7 @@
     height: 51px;
     width: 135px;
     align-items: center;
-    background: #f3d4b7;
+    background: #007bff;
     cursor: pointer;
     position: relative;
     padding-left: 41px;
@@ -196,7 +196,7 @@
       -webkit-transform: translateZ(0);
       transform: translateZ(0); }
     .actions li a:hover {
-      background: #d9bda3; }
+      background: lightblue; }
       .actions li a:hover:before {
         -webkit-animation-name: hvr-icon-wobble-horizontal;
         animation-name: hvr-icon-wobble-horizontal;

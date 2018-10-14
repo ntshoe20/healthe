@@ -18,7 +18,7 @@ export class PatientService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  /** GET: Get all leads*/
+  /** GET: Get all patients*/
   public get(): Observable<Patient[]> {
     return this.http.get<Patient[]>(this.accessPointUrl, httpOptions)
       .pipe(
@@ -27,9 +27,43 @@ export class PatientService {
       );
   }
 
+  /** GET: Get patient by id*/
+  getPatient(id: string): Observable<Patient> {
+    return this.http.get<Patient>(this.accessPointUrl + '/' + id, httpOptions)
+      .pipe(
+        tap(),
+        catchError(this.handleError<Patient>('getPatient'))
+      );
+  }
+
+  /** PUT: */
+  update(patient: Patient): Observable<any> {
+    return this.http.put(this.accessPointUrl + '/' + patient.patientID, patient, httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated patient id=${patient.patientID}`, true)),
+        catchError(this.handleError<any>('updatePatient'))
+      );
+  }
+
+  /** POST: */
+  add(patient: Patient): Observable<Patient> {
+    return this.http.post<Patient>(this.accessPointUrl, patient, httpOptions).pipe(
+      tap((patient: Patient) => this.log(`added patient w/ id=${patient.patientID}`, true)),
+      catchError(this.handleError<Patient>('addPatient'))
+    );
+  }
+
+  /** DELETE: */
+  delete(patient: Patient): Observable<any> {
+    return this.http.post<any[]>(this.accessPointUrl + '/', patient.patientID, httpOptions).pipe(
+      tap(_ => this.log(`deleted patients`, true)),
+      catchError(this.handleError<Patient>('deletePatient'))
+    );
+  }
+
   /******************** Private Helpers ********************/
   private log(message: string, isSuccess: boolean) {
-    this.messageService.add(`LeadService: ${message}`, isSuccess);
+    this.messageService.add(`PatientService: ${message}`, isSuccess);
   }
 
   /**

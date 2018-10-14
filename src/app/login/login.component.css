@@ -44,7 +44,7 @@
 .login-page .rounded-btn {
   -webkit-border-radius: 50px;
   border-radius: 50px;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   background: #222;
   border: 2px solid rgba(255, 255, 255, 0.8);
   font-size: 18px;

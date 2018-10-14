@@ -1,97 +1,74 @@
 <!-- Page Header -->
 <div class="page-header row no-gutters py-4">
-  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-    <span class="text-uppercase page-subtitle">User Profile</span>
-    <h3 class="page-title">Edit Profile</h3>
+    <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+      <span class="text-uppercase page-subtitle">Patients</span>
+      <h3 class="page-title">My Patients</h3>
+    </div>
   </div>
-</div>
-<!-- Profile Overview -->
+<!-- Default Light Table -->
 <div class="row">
-  <div class="col-lg-4">
-    <div class="card card-small mb-4 pt-3">
-      <div class="card-header border-bottom text-center">
-        <div class="mb-3 mx-auto">
-          <img class="rounded-circle" src="{{user.general.picture}}" alt="User Avatar" width="110"> </div>
-        <h4 class="mb-0">{{user.user_metadata.first_name | titlecase}}</h4>
-        <span class="text-muted d-block mb-2">{{ user.user_metadata.designation }}</span>
-        <div>
-          <p class="text_muted d-inline">Verified</p>
-          <i class="fa fa-check-circle ml-1 d-inline" style="color:green"></i>
+    <div class="col">
+      <div class="card card-small mb-4">
+        <div class="card-header border-bottom">
+          <h6 class="m-0">My Patients</h6>
+        </div>
+        <div class="card-body p-0 pb-3 text-center">
+          <table class="table mb-0">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" class="border-0">#</th>
+                <th scope="col" class="border-0">First Name</th>
+                <th scope="col" class="border-0">Last Name</th>
+                <th scope="col" class="border-0">City</th>
+                <th scope="col" class="border-0">Phone</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="detail-link" routerLink="/admin/patient/new">1</td>
+                <td>Themba</td>
+                <td>Zimo</td>
+                <td>Thembisa</td>
+                <td>107-0339</td>
+                <td>
+                    <span class="fa fa-ellipsis-v row-options" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                      aria-expanded="false"></span>
+                    <div class="dropdown-menu dropdown-menu-small">
+                      <a class="dropdown-item" routerLink="/admin/patient/new">
+                        <i class="material-icons dropdown-menu-item mr-1">edit</i> Edit
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="material-icons dropdown-menu-item mr-1">delete</i> Delete
+                      </a>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jabu</td>
+                <td>Mavimbela</td>
+                <td>Kempton Park</td>
+                <td>1-660-850-1647</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Itumeleng</td>
+                <td>Ntshoe</td>
+                <td>Midrand</td>
+                <td>214-4225</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Tshepang</td>
+                <td>Kganye</td>
+                <td>Tembisa</td>
+                <td>1-848-473-7416</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item px-4"> 
-          <strong class="text-muted d-block mb-2">Group</strong>
-          <p>Kwa-Thema Funeral Services</p>
-          <a class="btn-crud-primary" [routerLink]="['/admin/lead/new']">
-            <span class="fa fa-pencil-alt ml-2"></span>
-          </a>
-        </li>
-        <li class="list-group-item p-4">
-          <span class="small float-right">Last Updated: {{user.general.updated_at | date:'medium'}}</span>
-        </li>
-      </ul>
     </div>
   </div>
-  <!-- Edit Overview -->
-  <div class="col-lg-8">
-    <div class="card card-small mb-4">
-      <div class="card-header border-bottom">
-        <h6 class="m-0">Account Details</h6>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item p-3">
-          <div class="row">
-            <div class="col">
-              <form>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="feName">Name</label>
-                    <input type="text" class="form-control" id="feName" placeholder="Name" [(ngModel)]="user.user_metadata.first_name" name="first_name">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="feSurname">Surname</label>
-                    <input type="text" class="form-control" id="feSurname" placeholder="Surname" [(ngModel)]="user.user_metadata.surname" name="surname">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="feDesignation">Designation</label>
-                  <input type="text" class="form-control" id="feDesignation" placeholder="Project Manager" [(ngModel)]="user.user_metadata.designation" name="designation">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="feEmail">Designation</label>
-                    <input type="email" class="form-control" id="feEmail" placeholder="themba@gmail.com" [(ngModel)]="user.general.name" name="email">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="feContact">Cellphone Number</label>
-                    <input type="text" class="form-control" id="feContact" placeholder="0832000795" [(ngModel)]="user.user_metadata.contact" name="contact">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="feInputAddress">Address</label>
-                  <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St"> </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="feInputCity">City</label>
-                    <input type="text" class="form-control" id="feInputCity"> </div>
-                  <div class="form-group col-md-4">
-                    <label for="feInputProvince">Province</label>
-                    <select id="feInputProvince" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip"> </div>
-                </div>
-                <button (click)="update()" class="btn btn-accent">Update Account</button>
-              </form>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+  <!-- End Default Light Table -->

@@ -13,9 +13,9 @@ import { PatientComponent } from './patient/patient/patient.component';
 import { RequesterComponent } from './requester/requester/requester.component';
 import { PatientDataRequestComponent } from './patientDataRequest/patient-data-request/patient-data-request.component';
 import { EmergencyContactComponent } from './emergencyContact/emergency-contact/emergency-contact.component';
-import { AllergyTypeComponent } from './allergyType/allergy-type/allergy-type.component';
 import { MessageComponent } from './components/messages/message/message.component';
 import { PatientNewComponent } from './patient/patient-new/patient-new.component';
+import { AllergyComponent } from './allergy/allergy/allergy.component';
 
 @NgModule({
   imports: [
@@ -34,8 +34,8 @@ import { PatientNewComponent } from './patient/patient-new/patient-new.component
     RequesterComponent,
     PatientDataRequestComponent,
     EmergencyContactComponent,
-    AllergyTypeComponent,
     PatientNewComponent,
+    AllergyComponent,
     
   ]
 })

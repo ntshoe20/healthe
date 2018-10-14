@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddressEditComponent } from './address-edit.component';
+import { AllergyComponent } from './allergy.component';
 
-describe('AddressEditComponent', () => {
-  let component: AddressEditComponent;
-  let fixture: ComponentFixture<AddressEditComponent>;
+describe('AllergyComponent', () => {
+  let component: AllergyComponent;
+  let fixture: ComponentFixture<AllergyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressEditComponent ]
+      declarations: [ AllergyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddressEditComponent);
+    fixture = TestBed.createComponent(AllergyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
