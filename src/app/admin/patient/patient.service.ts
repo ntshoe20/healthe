@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class PatientService {
 
-  private accessPointUrl: string = 'https://localhost:44314/api/leads';
+  private accessPointUrl: string = 'https://healthebackend20181014040029.azurewebsites.net/api/patients';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
