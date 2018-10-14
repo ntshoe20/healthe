@@ -7,3 +7,4 @@
 @import 'shards-dashboards.1.0.0.css'; 
 @import 'extras.1.0.0.min.css';
 @import '_crud.css';
+@import '_stepper.css';

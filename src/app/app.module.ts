@@ -1,6 +1,5 @@
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuard } from './shared/guard/auth.guard';
-import { LeadService } from './admin/lead/lead.service';
 import { AdminModule } from './admin/admin.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +27,6 @@ import { CallbackComponent } from './shared/callback/callback/callback.component
     FormsModule
   ],
   providers: [
-    LeadService,
     AuthGuard,
     AuthService
   ],

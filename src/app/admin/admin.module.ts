@@ -6,23 +6,16 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { LeadIndexComponent } from './lead/lead-index/lead-index.component';
-import { LeadDetailComponent } from './lead/lead-detail/lead-detail.component';
 import { FormsModule } from '@angular/forms';
-import { LeadNewComponent } from './lead/lead-new/lead-new.component';
-import { MessageComponent } from './components/messages/message/message.component';
-import { ProfileComponent } from './profile/profile.component';
-import { GroupIndexComponent } from './group/group-index/group-index.component';
-import { MemberIndexComponent } from './member/member-index/member-index.component';
-import { GroupDetailComponent } from './group/group-detail/group-detail.component';
-import { GroupNewComponent } from './group/group-new/group-new.component';
-import { MemberDetailComponent } from './member/member-detail/member-detail.component';
-import { MemberNewComponent } from './member/member-new/member-new.component';
-import { GroupEditComponent } from './group/group-edit/group-edit.component';
-import { LeadEditComponent } from './lead/lead-edit/lead-edit.component';
-import { MemberEditComponent } from './member/member-edit/member-edit.component';
-import { AddressEditComponent } from './address/address-edit/address-edit.component';
+
 import { EnumPipe } from './shared/pipes/enum.pipe';
+import { PatientComponent } from './patient/patient/patient.component';
+import { RequesterComponent } from './requester/requester/requester.component';
+import { PatientDataRequestComponent } from './patientDataRequest/patient-data-request/patient-data-request.component';
+import { EmergencyContactComponent } from './emergencyContact/emergency-contact/emergency-contact.component';
+import { AllergyTypeComponent } from './allergyType/allergy-type/allergy-type.component';
+import { MessageComponent } from './components/messages/message/message.component';
+import { PatientNewComponent } from './patient/patient-new/patient-new.component';
 
 @NgModule({
   imports: [
@@ -31,26 +24,19 @@ import { EnumPipe } from './shared/pipes/enum.pipe';
     AdminRoutingModule
   ],
   declarations: [
-    AdminComponent, 
+    AdminComponent,
+    MessageComponent, 
     DashboardComponent, 
     SidebarComponent, 
     HeaderComponent, 
-    LeadIndexComponent, 
-    LeadDetailComponent, 
-    LeadNewComponent, 
-    MessageComponent, 
-    ProfileComponent, 
-    GroupIndexComponent, 
-    MemberIndexComponent, 
-    GroupDetailComponent, 
-    GroupNewComponent, 
-    MemberDetailComponent, 
-    MemberNewComponent, 
-    GroupEditComponent, 
-    LeadEditComponent, 
-    MemberEditComponent, 
-    AddressEditComponent, 
-    EnumPipe
+    EnumPipe,
+    PatientComponent,
+    RequesterComponent,
+    PatientDataRequestComponent,
+    EmergencyContactComponent,
+    AllergyTypeComponent,
+    PatientNewComponent,
+    
   ]
 })
 export class AdminModule { }

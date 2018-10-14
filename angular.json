@@ -35,10 +35,8 @@
               "src/assets/js/shards-dashboards.1.0.0.min.js",
               "src/assets/vendor/jquery-easing/jquery.easing.min.js",
               "src/assets/js/scrolling-nav.js",
-              "src/assets/vendor/countdowntime/moment.min.js",
-              "src/assets/vendor/countdowntime/moment-timezone.min.js",
-              "src/assets/vendor/countdowntime/moment-timezone-with-data.min.js",
-              "src/assets/vendor/countdowntime/countdowntime.js"
+              "src/assets/js/jquery.steps.js",
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {
